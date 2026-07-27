@@ -1,7 +1,24 @@
 # Faraday rotation from ellipsometry data
-This is a repository of scripts that parse ellipsometry data from .txt files, calculate Faraday rotation (FR) three different ways, and returns the values in a table and plot formatted for an excel file.
+This is a repository of scripts that parse nulling ellipsometry data from .txt files, calculate Faraday rotation (FR) three different ways, and returns the values in a table and plot formatted for an excel file.
 The calculation of Faraday rotation from the ellipsometric parameter psi is based on the theory outlined by Valeanu et al. [1]
 All the samples measured were thin-films (micrometer scale) with a focus on thin-films of nanoparticles (NPs) deposited on a substrate. The experimental data includes measurements on SnO2 core Au shell NPs deposited on an Si substrate.
+
+### Data format
+The null ellipsometer used to take measurements was the Nanofilm Technology (NFT) I-ELI2000 Imaging Ellipsometer. A preview of the structure of the data files is as follows: \
+Experiment:
+------------  Jul 8, 2026     1:58:26 PM  -----------
+wavelength: 532.00nm   angle-of-incidence: 43.89°   output power: 1%
+ROI: 0,0,768,572
+nulling method: one zone w/ 1 iteration
+Null #1: P -44.038°   C 45.000°   A -35.888°  -> Delta: 178.07   Psi: 35.89
+optical model results:
+d layer 0 = 3.6313
+------------  Jul 8, 2026     1:58:52 PM  ----------- \ 
+... and so on... \
+The scripts are specifically designed to parse the relevant info (e.g., angle-of-incidence, angle of P, psi, and delta) contained in these text files. Note that the agnles psi and delta are both in degrees. The thickness of the layer, d layer 0, is in nm. 
+
+### Faraday Rotation Calculations
+
 
 ## Samples 
 This script analyses data from the samples data folder. The calculated FR of different samples is plotted with error bars. The first plot visualizes the FR of all the measured thin-films, including polymer, blank Si, and 1SnxAu NPs with different loading ratios (represented by 'x'), being either etched (polymer removed) or loaded (polymer present). It is expected that the polymer on its own should a negligible FR response. [2] Similarly, the FR of blank Si should not be measurable in the visible spectrum. [3] Moreover, FR rotation should increase with increasing volume of Au added (i.e., increasing 'x'). [3] Finally, loaded thin-films of NPs should exhibit greater FR than etched thin-films of NPs. [2]
@@ -15,7 +32,7 @@ This script analyses data from the angle data folder. The calculated Faraday rot
 This script is a modifed version of the samples script. It also analyses data from the samples data folder. The calculated FR of from the blank Si sample is substracted from the FR of the SnO2Au samples with different loading ratios. This adjustment of the FR output is done to control for the effect of Si on the FR and elucidate the effect of the NPs on the FR of the sample.
 ![Figure Description](samples_Si_control_plot.png)
 
-## References 
+# References 
 [1] M. Valeanu, M. Sofronie, A. Galca, F. Tolea, M. Elisa,  bogdan alexandru Sava, L. Boroica, and V. Kuncser, “The relationship between magnetism and magneto-optical effects in rare earth doped aluminophosphate glasses,” Journal of Physics D: Applied Physics 49, 075001 (2016).
 [2] A. Miles, Y. Gai, P. Gangopadhyay, X. Wang, R.A. Norwood, and J.J. Watkins, “Improving Faraday rotation performance with block copolymer and FePt nanoparticle magneto-optical composite,” Opt. Mater. Express, OME 7(6), 2126–2140 (2017).
 [3] I. Snetkov, and A. Yakovlev, “Faraday isolator based on crystalline silicon for 2-µm laser radiation,” Opt. Lett., OL 47(7), 1895–1898 (2022).
