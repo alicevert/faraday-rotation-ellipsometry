@@ -13,11 +13,14 @@ nulling method: one zone w/ 1 iteration
 Null #1: P -44.038°   C 45.000°   A -35.888°  -> Delta: 178.07   Psi: 35.89
 optical model results:
 d layer 0 = 3.6313
-------------  Jul 8, 2026     1:58:52 PM  ----------- \ 
-... and so on... \
+------------  Jul 8, 2026     1:58:52 PM  ----------- 
+\ 
+... and so on... 
+\
 The scripts are specifically designed to parse the relevant info (e.g., angle-of-incidence, angle of P, psi, and delta) contained in these text files. Note that the agnles psi and delta are both in degrees. The thickness of the layer, d layer 0, is in nm. 
 
 ### Faraday Rotation Calculations
+It is necessary to isolate the contribution of the magneto-optically active nanoparticles to the ellipsometry signal and eliminate the effects of the substrate/layer. Therefore, the change in the ellipsometry output angle psi with varying magnetic field is used to calculate Faraday rotation. The equation for angle of Faraday rotation is Φ = (ψB+ -  ψB0) · sgn(P) = (ψB0 - ψB+) · sgn(P) = (ψB+ -  ψB-)/2 · sgn(P) which comprises the three methods mentioned above.
 
 
 ## Samples 
@@ -33,9 +36,9 @@ This script is a modifed version of the samples script. It also analyses data fr
 ![Figure Description](samples_Si_control_plot.png)
 
 # References 
-[1] M. Valeanu, M. Sofronie, A. Galca, F. Tolea, M. Elisa,  bogdan alexandru Sava, L. Boroica, and V. Kuncser, “The relationship between magnetism and magneto-optical effects in rare earth doped aluminophosphate glasses,” Journal of Physics D: Applied Physics 49, 075001 (2016).
-[2] A. Miles, Y. Gai, P. Gangopadhyay, X. Wang, R.A. Norwood, and J.J. Watkins, “Improving Faraday rotation performance with block copolymer and FePt nanoparticle magneto-optical composite,” Opt. Mater. Express, OME 7(6), 2126–2140 (2017).
-[3] I. Snetkov, and A. Yakovlev, “Faraday isolator based on crystalline silicon for 2-µm laser radiation,” Opt. Lett., OL 47(7), 1895–1898 (2022).
+[1] M. Valeanu, M. Sofronie, A. Galca, F. Tolea, M. Elisa,  bogdan alexandru Sava, L. Boroica, and V. Kuncser, “The relationship between magnetism and magneto-optical effects in rare earth doped aluminophosphate glasses,” Journal of Physics D: Applied Physics 49, 075001 (2016). \
+[2] A. Miles, Y. Gai, P. Gangopadhyay, X. Wang, R.A. Norwood, and J.J. Watkins, “Improving Faraday rotation performance with block copolymer and FePt nanoparticle magneto-optical composite,” Opt. Mater. Express, OME 7(6), 2126–2140 (2017). \
+[3] I. Snetkov, and A. Yakovlev, “Faraday isolator based on crystalline silicon for 2-µm laser radiation,” Opt. Lett., OL 47(7), 1895–1898 (2022). \
 [4]  K. Lewis, R. Arbi, A. Ibrahim, E. Smith, P. Olivera, F. Garza, and A. Turak, “Gold-coated tin oxide nanoparticles as potential optical isolator materials: simulation of absorption and Faraday rotation and comparison with micelle templated core-shell nanoparticles,” J Mater Sci: Mater Electron 34(8), 750 (2023).
 
 
