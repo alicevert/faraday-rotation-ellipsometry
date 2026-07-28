@@ -6,17 +6,15 @@ All the samples measured were thin-films (micrometer scale) with a focus on thin
 ### Data format
 The null ellipsometer used to take measurements was the Nanofilm Technology (NFT) I-ELI2000 Imaging Ellipsometer. A preview of the structure of the data files is as follows: \
 Experiment:
-------------  Jul 8, 2026     1:58:26 PM  -----------
-wavelength: 532.00nm   angle-of-incidence: 43.89°   output power: 1%
-ROI: 0,0,768,572
-nulling method: one zone w/ 1 iteration
-Null #1: P -44.038°   C 45.000°   A -35.888°  -> Delta: 178.07   Psi: 35.89
-optical model results:
-d layer 0 = 3.6313
-------------  Jul 8, 2026     1:58:52 PM  ----------- 
-\ 
-... and so on... 
-\
+------------  Jul 8, 2026     1:58:26 PM  ----------- \
+wavelength: 532.00nm   angle-of-incidence: 43.89°   output power: 1% \
+ROI: 0,0,768,572 \
+nulling method: one zone w/ 1 iteration \
+Null #1: P -44.038°   C 45.000°   A -35.888°  -> Delta: 178.07   Psi: 35.89 \
+optical model results: \
+d layer 0 = 3.6313 \
+------------  Jul 8, 2026     1:58:52 PM  ----------- \ 
+... and so on... \
 The scripts are specifically designed to parse the relevant info (e.g., angle-of-incidence, angle of P, psi, and delta) contained in these text files. Note that the agnles psi and delta are both in degrees. The thickness of the layer, d layer 0, is in nm. 
 
 ### Faraday Rotation Calculations
